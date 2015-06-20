@@ -1,0 +1,9 @@
+package database.access.facade;
+
+public interface IDatabase {
+	public void insert();
+	public void update();
+	public void remove();
+	public void find();
+	public void find(String id);
+}

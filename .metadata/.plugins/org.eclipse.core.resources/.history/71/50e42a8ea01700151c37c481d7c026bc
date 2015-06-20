@@ -1,0 +1,9 @@
+package development.testing.code;
+
+import database.access.facade.MongoFacade;
+
+public class CodeTestingSandbox {
+	public static void main(String[] args){
+		MongoFacade fac = new MongoFacade();
+	}
+}

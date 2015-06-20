@@ -1,0 +1,50 @@
+package database.access.facade;
+
+import java.net.UnknownHostException;
+
+import com.mongodb.MongoClient;
+
+public class MongoFacade implements DatabaseFacade{
+	public static final String SERVER_NAME = "localhost";
+	public static final int PORT_NUM = 27017;
+	public static MongoClient mc = null;
+	
+	private MongoClient getInstance(){
+		if(this.mc == null){
+			try {
+				return new MongoClient(SERVER_NAME, PORT_NUM);
+			} catch (UnknownHostException e) {		
+				e.printStackTrace();
+			}
+		}else{
+			return this.mc;
+		}		
+	}
+	
+
+	public void insert() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void remove() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void find() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void find(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

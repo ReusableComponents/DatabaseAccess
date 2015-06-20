@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;database.access.facade.IDatabase&apos; to &apos;DatabaseFacade&apos;&#x0D;&#x0A;- Original project: &apos;database.access.facade.document-based&apos;&#x0D;&#x0A;- Original element: &apos;database.access.facade.IDatabase&apos;&#x0D;&#x0A;- Renamed element: &apos;database.access.facade.DatabaseFacade&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;IDatabase&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;database.access.facade{IDatabase.java[IDatabase" matchStrategy="1" name="DatabaseFacade" qualified="false" references="true" similarDeclarations="false" stamp="1434839806223" textual="false" version="1.0"/>
+</session>
