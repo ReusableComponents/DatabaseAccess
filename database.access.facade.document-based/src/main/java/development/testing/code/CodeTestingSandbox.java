@@ -3,11 +3,14 @@ package development.testing.code;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 
+import database.access.facade.DatabaseFacade;
 import database.access.facade.MongoFacade;
 
 public class CodeTestingSandbox {
 	public static void main(String[] args){
-		MongoFacade fac = new MongoFacade();
-		fac.find();		
+		DatabaseFacade fac = new MongoFacade();
+		fac.insert();
+		fac.find();
+		
 	}
 }

@@ -1,0 +1,7 @@
+package database.access.facade.test;
+
+import junit.framework.TestCase;
+
+public class MongoFacadeTest extends TestCase{
+
+}

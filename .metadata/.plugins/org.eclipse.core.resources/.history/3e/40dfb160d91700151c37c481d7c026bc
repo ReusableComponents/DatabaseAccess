@@ -1,0 +1,77 @@
+package database.access.facade;
+
+import java.net.UnknownHostException;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
+
+public class MongoFacade implements DatabaseFacade{
+	private static final String SERVER_NAME = "localhost";
+	private static final int PORT_NUM = 27017;
+	private static final String HEALASSIST_DB = "healassistDB";
+	public static MongoClient mc = null;	
+	
+	public MongoFacade(){
+		this.initClient();
+	}
+	
+	private Boolean initClient(){
+		try{
+			if(this.mc == null){
+				this.mc = new MongoClient();
+			}
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	
+	private DB getDatabase(){
+		return this.getClient().getDB(HEALASSIST_DB);
+	}
+	
+	private 
+	
+	private MongoClient getClient(){
+		return null;		
+	}
+	
+
+	public void insert() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void remove() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void find() {
+		MongoClient client = this.getClient();
+		DB db = client.getDB("healassistDB");
+		DBCollection physicians = db.getCollection("physicians");
+		
+		BasicDBObject query = new BasicDBObject();
+		query.put("firstname", "Jacob");
+		com.mongodb.DBCursor cursor = physicians.find();
+		
+		while(cursor.hasNext()){
+			System.out.println(cursor.next());
+		}
+		
+	}
+
+	public void find(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

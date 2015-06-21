@@ -1,0 +1,16 @@
+package database.access.facade.test;
+
+import database.access.facade.DatabaseFacade;
+import junit.framework.TestCase;
+
+/* 
+ * 
+*/
+public class MongoFacadeTest extends TestCase{
+	protected void setUp(){
+		//Setup test cases
+		DatabaseFacade facade = new DatabaseFacade();
+	}
+	
+	
+}

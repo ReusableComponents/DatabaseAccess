@@ -1,0 +1,5 @@
+package database.access.facade.test;
+
+public class MongoFacadeTest extends TestCase{
+
+}

@@ -5,34 +5,44 @@ import java.net.UnknownHostException;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
 public class MongoFacade implements DatabaseFacade{
-	public static final String SERVER_NAME = "localhost";
-	public static final int PORT_NUM = 27017;
-	public static MongoClient mc = null;	
+	private static final String SERVER_NAME = "localhost";
+	private static final int PORT_NUM = 27017;
+	private static final String DATABASE_NAME = "healassistDB";
+	private static MongoClient mc = null;	
+	
+	public MongoFacade(){
+		try{
+			this.mc = new MongoClient(SERVER_NAME, PORT_NUM);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 	
 	private MongoClient getClient(){
-		if(this.mc == null){
-			try {
-				return new MongoClient(SERVER_NAME, PORT_NUM);
-			} catch (UnknownHostException e) {		
-				e.printStackTrace();				
-			}
-		}else{
-			return this.mc;
-		}
-		return null;		
+		return this.mc;		
 	}
 	
-
-	public void insert() {
-		// TODO Auto-generated method stub
-		
+	private DB getDatabase(){
+		return this.getClient().getDB(DATABASE_NAME);
+	}
+	
+	private DBCollection getCollection(String name){
+		return (DBCollection)this.getDatabase().getCollection(name);
+	}
+	
+	public void insert() {		
+		DBObject doc = new BasicDBObject();
+		doc.put("key1", "value1");
+		doc.put("key2", "value2");
+		doc.put("key3", "value3");
+		this.getCollection("physicians").insert(doc);
 	}
 
-	public void update() {
-		// TODO Auto-generated method stub
+	public void update() {		
 		
 	}
 
@@ -52,8 +62,7 @@ public class MongoFacade implements DatabaseFacade{
 		
 		while(cursor.hasNext()){
 			System.out.println(cursor.next());
-		}
-		
+		}		
 	}
 
 	public void find(String id) {
