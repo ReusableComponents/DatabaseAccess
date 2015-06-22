@@ -1,8 +1,0 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>database.access</groupId>
-  <artifactId>facade</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>database.access.facade</name>
-  <description>A simple facade providing simple, higher level access into one's underlying database. This facade provides an interface allowing multiple underlying database technologies compatibility and, therefore, can be used with noSQL and relational databases.</description>
-</project>

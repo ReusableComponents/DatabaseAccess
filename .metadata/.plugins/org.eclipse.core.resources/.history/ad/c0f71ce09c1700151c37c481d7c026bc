@@ -1,5 +1,0 @@
-package database.access.facade;
-
-public class MongoFacade implements DatabaseFacade{
-
-}
